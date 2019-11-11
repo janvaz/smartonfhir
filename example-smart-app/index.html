@@ -252,30 +252,8 @@
 
           <!-- Page Heading -->
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
-
-            <!-- FHIR SCRIPT for FHIRCLIENT CONNECTIVITY -->
-            <script type="text/javascript">
-                FHIR.oauth2.ready(function (fhirClient) {
-                    var patient = fhirClient.patient;
-                    $.when(patient.read())
-                        .done(function (p) {
-                            var name = p.name[0];
-                            var formattedName = name.given[0] + " " + name.family;
-                            $("#patientName").text(formattedName);
-                        });
-                    $.when(patient.api.search({type: "Observation", query: {code: '8302-2'}, count: 50}))
-                        .done(function (obsSearchResults) {
-                            obsSearchResults.data.entry.forEach(function (obs) {
-                                var obsRow = "<tr><td>" + obs.resource.effectiveDateTime + "</td>" + "<td>" +
-                                    obs.resource.valueQuantity.value + obs.resource.valueQuantity.unit + "</td></tr>"
-                                $("#obsTable").append(obsRow);
-                            });
-                        });
-                });
-            </script>
-
             <!-- call name of patient -->
-            <h1 class="h3 mb-0 text-gray-800" id="patientName">
+            <h1 class="h3 mb-0 text-gray-800" id="fname">
             </h1>
             <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
           </div>
