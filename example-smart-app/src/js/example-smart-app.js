@@ -90,7 +90,7 @@
           p.fname = fname;
           p.lname = lname;
           p.address = address;
-          p.telecom = phone;
+          p.phone = phone;
           p.email = email;
           p.city = city;
           p.state = state;
