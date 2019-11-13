@@ -47,11 +47,33 @@
 
           var fname = '';
           var lname = '';
+          var age = '';
+          var phone = '';
+          var address = '';
+          var state = '';
+          var city = '';
+          var zipcode = '';
+          var country = '';
+          var email= '';
 
           if (typeof patient.name[0] !== 'undefined') {
             fname = patient.name[0].given.join(' ');
             lname = patient.name[0].family;
           }
+
+          if (typeof patient.address[0] !== 'undefined') {
+            address = patient.address[0].line.join(' ');
+            city = patient.address[0].city;
+            state = patient.address[0].state;
+            zipcode = patient.address[0].postalCode;
+            country = patient.address[0].country;
+          }
+
+          if (typeof patient.telecom[0] !== 'undefined') {
+            phone = patient.telecom[0].value;
+            email = patient.telecom[1].value;
+          }
+
 
           // Observations
           lymph = byCodes('26478-8');
@@ -68,6 +90,13 @@
           p.gender = gender;
           p.fname = fname;
           p.lname = lname;
+          p.address = address;
+          p.telecom = phone;
+          p.email = email;
+          p.city = city;
+          p.state = state;
+          p.country = country;
+          p.zipcode = zipcode;
 
           // Observations
           p.lymph = getQuantityValueAndUnit(lymph[0]);
@@ -106,7 +135,14 @@
       lname: {value: ''},
       gender: {value: ''},
       birthdate: {value: ''},
-      lymph: {value: ''}
+      lymph: {value: ''},
+      address: {value:, ''},
+      phone:{value:, ''},
+      email:{value:, ''},
+      city:{value:, ''},
+      country:{value:, ''},
+      state:{value:, ''},
+      zipcode:{value:, ''}
 
       // Cerner SoF Tutorial Observations
       // height: {value: ''},
@@ -155,7 +191,13 @@
     $('#gender').html(p.gender);
     $('#birthdate').html(p.birthdate);
     $('#lymph').html(p.lymph);
-    
+    $('#address').html(p.address);
+    $('#phone').html(p.phone);
+    $('#email').html(p.email);
+    $('#city').html(p.city);
+    $('#country').html(p.country);
+    $('#state').html(p.state);
+    $('#zipcode').html(p.zipcode);
     // Cerner SoF Tutorial Observations
 
     // $('#height').html(p.height);
