@@ -47,27 +47,26 @@
 
           var fname = '';
           var lname = '';
-          var age = '';
-          var phone = '';
-          var address = '';
-          var state = '';
-          var city = '';
-          var zipcode = '';
-          var country = '';
-          var email= '';
 
           if (typeof patient.name[0] !== 'undefined') {
             fname = patient.name[0].given.join(' ');
             lname = patient.name[0].family;
           }
 
+          var address = '';
+          var city = '';
+          var state = '';
+          var zipcode = '';
+
           if (typeof patient.address[0] !== 'undefined') {
-            address = patient.address[0].line.join(' ');
+            address = patient.address[0].line.join('');
             city = patient.address[0].city;
             state = patient.address[0].state;
             zipcode = patient.address[0].postalCode;
-            country = patient.address[0].country;
           }
+
+          var phone = '';
+          var email= '';
 
           if (typeof patient.telecom[0] !== 'undefined') {
             phone = patient.telecom[0].value;
