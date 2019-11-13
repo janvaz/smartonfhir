@@ -59,7 +59,7 @@
           var zipcode = '';
 
           if (typeof patient.address[0] !== 'undefined') {
-            address = patient.address[0].line.join('');
+            address = patient.address[0].line;
             city = patient.address[0].city;
             state = patient.address[0].state;
             zipcode = patient.address[0].postalCode;
