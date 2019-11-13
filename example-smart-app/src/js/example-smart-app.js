@@ -135,13 +135,13 @@
       gender: {value: ''},
       birthdate: {value: ''},
       lymph: {value: ''},
-      address: {value:, ''},
-      phone:{value:, ''},
-      email:{value:, ''},
-      city:{value:, ''},
-      country:{value:, ''},
-      state:{value:, ''},
-      zipcode:{value:, ''}
+      address: {value: ''},
+      phone:{value: ''},
+      email:{value: ''},
+      city:{value: ''},
+      country:{value: ''},
+      state:{value: ''},
+      zipcode:{value: ''},
 
       // Cerner SoF Tutorial Observations
       // height: {value: ''},
