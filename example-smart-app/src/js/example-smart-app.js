@@ -141,7 +141,7 @@
       city:{value: ''},
       country:{value: ''},
       state:{value: ''},
-      zipcode:{value: ''},
+      zipcode:{value: ''}
 
       // Cerner SoF Tutorial Observations
       // height: {value: ''},
